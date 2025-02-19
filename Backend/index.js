@@ -1,13 +1,14 @@
 import express from "express";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import User from "./Models/User.js";
 
-//allows access to .env file to retrieve mongodb uri
+// currently not being used for mongo uri - just using localhost
 dotenv.config();
 
 const app = express();
 
-app.get("/users", (req, res) => {
+app.get("/", (req, res) => {
     res.send("server is ready123");
 });
 
